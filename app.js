@@ -204,7 +204,7 @@ function missileGone() {
   // fjern pause
   document.querySelector("#missile_container").classList.remove("paused");
 
-  // genstart falling animation
+  // genstart falling-diagonal animation
   document.querySelector("#missile_container").classList.remove("falling-diagonal");
   document.querySelector("#missile_container").offsetWidth;
   document.querySelector("#missile_container").classList.add("falling-diagonal");
@@ -222,13 +222,13 @@ function clickEmergencyKit() {
     .querySelector("#emergency-kit_container")
     .removeEventListener("click", clickEmergencyKit);
 
-  // Stop heart container
+  // Stop emergency kit container
   document.querySelector("#emergency-kit_container").classList.add("paused");
 
-  // sæt forsvind-animation på heart
+  // sæt forsvind-animation på emergency kit
   document.querySelector("#emergency-kit_sprite").classList.add("zoom_out");
 
-  // når forsvind-animation er færdig: heatGone
+  // når forsvind-animation er færdig: emergencyKitGone
   document
     .querySelector("#emergency-kit_container")
     .addEventListener("animationend", emergencyKitGone);
@@ -253,7 +253,7 @@ function emergencyKitGone() {
   document.querySelector("#emergency-kit_container").offsetWidth;
   document.querySelector("#emergency-kit_container").classList.add("falling");
 
-  // gør det muligt at klikke på heart igen
+  // gør det muligt at klikke på emergency-kit igen
   document
     .querySelector("#emergency-kit_container")
     .addEventListener("click", clickEmergencyKit);
